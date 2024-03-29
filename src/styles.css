@@ -1,21 +1,649 @@
-* {
-  font-family: Arial, Helvetica, sans-serif;
+body {
+    overflow-x: hidden;
+    margin: 0;
+    font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
-html, body {
-  margin: 0;
-  border: 0;
-  padding: 0;
-  background-color: #fff;
+.page-bg {
+    padding-top: 100px; /* İstediğiniz miktarda boşluk ekleyebilirsiniz */
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
 
-main {
-  margin: auto;
-  width: 50%;
-  padding: 20px;
+.topnav {
+    background-color: #1e293b;
+    color: #f2f2f2;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0px 10px 0px;
+    position: fixed;
+    width: 100%;
+    z-index:99;
 }
 
-main > h1 {
-  text-align: center;
-  font-size: 3.5em;
+.nav-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
+
+.main-nav {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 20px;
+    position: fixed;
+}
+
+.main-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.main-nav li:last-child {
+    margin-right: 0;
+}
+
+.main-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.main-nav a:hover {
+    color: #00ffff;
+}
+
+.topnav a {
+    display: inline-block;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 14px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav .separator {
+    margin: 0 5px;
+}
+
+.topnav .logo img {
+    width: 250px;
+}
+
+.topnav a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+.second-topnav {
+    background-color: #334155;
+    color: #f2f2f2;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+    padding: 2px 5px;
+    width: 100%;
+    z-index: 999;
+}
+
+.second-topnav a {
+    display: inline-block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 10px;
+}
+
+.second-topnav .separator {
+    margin: 0 5px;
+    font-size: 14px;
+}
+
+.login-btn {
+    border-radius: 20px;
+    background-color: #334155;
+    color: #1e293b;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.login-btn:hover {
+    background-color: #1e293b;
+    color: #334155;
+    border-radius: 15px;
+}
+
+.login-btn:hover span {
+    filter: invert(100%);
+}
+
+.login-btn img {
+    margin-left: 5px;
+    width: 20px;
+    height: 20px;
+}
+
+.login-btn span {
+    margin-right: 5px;
+}
+
+.login-btn:hover {
+    background-color: #1e293b;
+    color: #334155;
+}
+
+.login-btn:hover img {
+    filter: invert(100%);
+}
+
+.body-content {
+    text-align: left;
+    padding-left: 200px;
+}
+
+.body-content h1 {
+    font-size: 24px;
+    padding-left: 85px;
+    margin: 0; /* H1 başlığının üstünde ve altında hiç boşluk bırakmaz */
+    color: #ffffff;
+    padding-top: 190px; /* H1 başlığının üst kısmına boşluk ekler */
+}
+
+.body-content h2 {
+    font-size: 38px;
+    padding-left: 85px;
+    margin: 0; /* H2 başlığının üstünde ve altında hiç boşluk bırakmaz */
+    color: #ffffff;
+}
+
+.tab-container {
+    display: flex;
+    margin-top: 100px; /* Yukarıya olan boşluğu ayarlayın */
+    justify-content: flex-start;
+    padding-left: 273px;
+}
+
+.tab {
+    background-color: #ffffff;
+    padding: 8px 12px; /* Tab butonlarının iç boşluğunu azalttık */
+    border: 1px solid #ffffff;
+    cursor: pointer;
+    border-radius: 5px 5px 0 0;
+    transition: background-color 0.3s;
+    margin-right: -1px; /* Tab'lar arasındaki boşluğu kaldırdık */
+}
+
+.tab:hover {
+    background-color: #e0e0e0;
+}
+
+/* Spacer için stil tanımları */
+.spacer {
+    width: 7px; /* Spacer genişliği */
+    }
+
+    .tab-content-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 25px 20px;
+        border-radius: 0px;
+        background-color: #ffffff; /* Dikdörtgenin arka plan rengi */
+        width: 50%; /* Sabit genişlik */
+        max-width: 1800px; /* Maksimum genişlik */
+        margin: 0 auto; /* Kenarlardan uzaklaştırma ve sayfanın ortasına hizalama, üst boşluğu kaldırdık */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Gölgelendirme efekti */
+        margin-bottom: 20px; /* Alt kısmın kaybolmasını engellemek için margin-bottom'u ayarladık */
+        width: 934px;
+    }
+
+
+    .tab-content {
+        display: none;
+        width: 100%;
+    }
+
+    .tab-content.active {
+        display: block;
+    }
+       
+    
+    .form-item label {
+        display: block; /* Etiketleri blok olarak ayarla */
+        margin-bottom: 5px; /* Etiketler arası boşluk */
+        color: #8f7d7d; /* Etiket rengi */
+    }
+    
+    .form-item {
+    margin-bottom: 20px; /* Form öğeleri arasına boşluk ekleyebilirsiniz */
+}
+
+.form-item input {
+    display: block;
+    width: calc(100% - 40px); /* Sol ve sağ padding miktarı kadar input genişliği azaltıldı */
+    padding: 20px; /* Paddingler sabit kaldı */
+    border-radius: 5px;
+    border: none;
+    background-color: #f4f6f8;
+    color: #000000;
+}
+
+.form-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px auto;
+    max-width: 1800px; /* Formun maksimum genişliği */
+    padding: 15px 10px; /* Form öğelerinin iç içe olduğu container'ın boyutunu artırır */
+    padding-right: 0px; /* Submit butonunun dış taraftaki containerden sağa olan uzaklığını ayarlar */
+}
+
+.form-item {
+    flex: 1;
+    margin-right: 20px; /* Diğer form öğeleriyle arasındaki boşluğu ayarlamak için margin-right değeri azaltıldı */
+}
+
+.submit-btn {
+    flex: 1; /* SUBMIT butonunu diğer form öğeleriyle aynı boyutta yapar */
+    margin-left: 20px; /* Diğer form öğelerinden boşluk bırakır */
+    padding: 10px 20px;
+    height: 55px; /* Submit butonunun yüksekliğini ayarlar */
+    background-color: #e20000;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #1e293b;
+}
+.background-rectangle {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+ 
+    z-index: -1; /* Diğer içeriklerin üstünde kalması için */
+}
+.rectangle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 0px;
+    margin: 25px 0 0; /* Üst boşluğu belirleyin ve diğer boşlukları sıfırlayın */
+}
+
+.tab-container-wrapper {
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding-top: 20px; /* Gerektiğinde boşluk ekleyebilirsiniz */
+}
+
+
+.rectangle {
+    display: flex;
+    justify-content: space-around; /* Logoları eşit aralıklarla yatay olarak yerleştir */
+    align-items: center; /* Logoları dikey olarak ortala */
+    width: 80%; /* Dikdörtgen konteynırın genişliği */
+    max-width: 935px; /* Maksimum genişlik belirleme */
+    padding: 9px 20px; /* İçeriğin kenar boşlukları */
+    background-color: white; /* Dikdörtgen konteynırın arka plan rengi */
+    border-color:#000000;
+    border-radius: 0px; /* Kenar yuvarlama */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Gölgelendirme efekti */
+}
+
+.image-input img {
+    max-width: 30px; /* Maksimum genişlik 20 piksel */
+    max-height: 30px; /* Maksimum yükseklik 20 piksel */
+    margin-right: 16px;
+    margin-block: 15px;
+}
+
+.logo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-item img {
+    max-width: 50px;
+    margin-bottom: 10px; /* Logo ile açıklama arasına boşluk ekler */
+}
+
+
+.logo-circle {
+    width: 50px;
+    height: 50px;
+    background-color: #bababa; /* Gri renk */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.logo-circle img {
+    max-width: 50px;
+    max-height: 50px;
+}
+label img {
+    max-width: 20px; /* Resmin en fazla genişliği */
+    max-height: 16px; /* Resmin en fazla yüksekliği */
+}
+
+.rectangle-container {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .slider-info-box {
+    border: 2px dashed #849ed1;
+    padding: 0px 20px;
+    width: 930px;
+    margin: 100px auto; /* Rectangle container'dan bir miktar aşağıda */
+    clear: both;
+    border-radius: 10px;
+    margin-bottom: 30px;
+  }
+
+  
+  .slider-info-box {
+    position: relative; /* İçerik göreceli pozisyonda olacak */
+}
+
+.info-header {
+    display: flex; /* İçerikleri yan yana hizalar */
+    justify-content: space-between; /* İçerikleri boşluk bırakarak hizalar */
+    align-items: center; /* İçerikleri dikey olarak hizalar */
+}
+
+.arrowlogosu {
+    margin-left: auto; /* Logoyu en sağa hizalar */
+    width: 40px;
+}
+
+.square-container-wrapper {
+    display: flex;
+    width: 70%;
+    padding: 0px 250px;
+}
+
+.square-container {
+    flex: 1;
+    margin: 0 5px;
+    text-align: left;
+}
+
+.square-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.square-container button {
+    background-color: #be0000; /* Buton arka plan rengi */
+    color: white; /* Buton metin rengi */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Geçiş efekti */
+}
+
+.square-container p {
+    font-size: 13px; /* Açıklama metni font boyutu */
+}
+.square-container button:hover {
+    background-color: #9c0000; /* Buton üzerine gelindiğinde rengi biraz daha koyu */
+}
+
+.offer-text {
+    text-align: left;
+    padding-left: 255px;
+    margin-top: 20px; /* Boşluk eklemek için */
+    font-size: 35px;
+}
+
+.highlighted {
+    color: #be0000; /* Kırmızı renk */
+    font-weight: bold; /* Kalın font */
+}
+
+.down-arrow {
+    max-width: 20px; /* Maksimum genişlik */
+    max-height: 20px; /* Maksimum yükseklik */
+    vertical-align: middle; /* Dikey hizalama */
+}
+
+.additional-text {
+    text-align: center; /* Metni ortala */
+    color: #333; /* Metin rengi */
+    margin-top: 20px; /* Üst boşluk */
+}
+
+.additional-text .highlighted {
+    color: #be0000; /* Kırmızı renk */
+}
+.right-arrow {
+    max-width: 15px; /* Maksimum genişlik */
+    max-height: 15px; /* Maksimum yükseklik */
+    vertical-align: middle; /* Dikey hizalama */
+}
+
+/* Logo ve fotoğraf konteynerı */
+/* Logo ve fotoğraf konteynerı */
+/* Logo ve fotoğraf konteynerı */
+.logo-image-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 20px; /* İstediğiniz boşluk için ayarlayabilirsiniz */
+    margin: 0px 150px;
+}
+
+/* Sol Logo */
+.logoleft {
+    flex: 1; /* Sol logo esnek olarak genişlesin */
+    display: flex;
+    justify-content: flex-start; /* Sol logoyu sola hizala */
+    opacity: 0.4; /* Opaklık ayarı */
+
+}
+
+.logoleft img {
+    width: 50px; /* Logo genişliği için istediğiniz değeri ayarlayabilirsiniz */
+    height: auto;
+}
+
+/* Sağ Logo */
+.logoright {
+    flex: 1; /* Sağ logo esnek olarak genişlesin */
+    display: flex;
+    justify-content: flex-end; /* Sağ logoyu sağa hizala */
+    opacity: 0.4; /* Opaklık ayarı */
+
+}
+
+.logoright img {
+    width: 50px; /* Logo genişliği için istediğiniz değeri ayarlayabilirsiniz */
+    height: auto;
+}
+
+/* Fotoğraf ve açıklama */
+.image-description {
+    text-align: center;
+    margin: 0 10px; /* Sağ ve sol kenar boşluğunu ayarlayabilirsiniz */
+}
+
+.image-description img {
+    width: 270px; /* Resim genişliği için istediğiniz değeri ayarlayabilirsiniz */
+    height: auto;
+}
+
+.image-description p {
+    margin-top: 10px; /* Açıklama ile resim arasındaki boşluk için ayarlayabilirsiniz */
+}
+
+.logo-image-container .highlightediki {
+    color: #be0000; /* Kırmızı renk */
+}
+
+.new-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.new-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rectangled-background {
+    border: 2px solid rgba(0, 0, 0, 0.148);
+    background-color: white;
+    padding: 20px;
+    width: 100%;
+    margin-top: 50px;
+    text-align: center; /* Logoları ve yazıları enine ortalar */
+    display: flex; /* Dikey hizalama için */
+    flex-wrap: wrap; /* Eğer içerik sığmazsa alt satıra geçmesini sağlar */
+    justify-content: center; /* Yazıları yatayda ortalar */
+    align-items: center; /* Yazıları dikeyde ortalar */
+}
+
+.rectangled-background .abc {
+    margin: 10px; /* Logolar arasındaki boşluk */
+    display: flex; /* Dikey hizalama için */
+    align-items: center; /* Yazıları dikeyde ortalar */
+}
+
+.rectangled-background img {
+    width: 70px; /* Logoların genişliği */
+    height: auto; /* Logoların orantılı olarak boyutlandırılması */
+}
+.rectangled-background .abc span {
+    font-weight: bold; /* Yazıları kalın yapar */
+    font-size: 10px;
+}
+.bottom-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* İhtiyaca göre ayarlayabilirsiniz */
+}
+.bottom-logos img {
+    margin: 0 10px; /* Logolar arasındaki boşluk */
+}
+
+.bottom-nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #334155; /* Arka plan rengi */
+    padding: 10px 0; /* İçeriğin kenarlardan uzaklaştırılması için padding */
+    width: 100%;
+    margin-top: 20px;
+}
+
+.bottom-nav img {
+    width: 30px; /* Logoların genişliği */
+    height: auto; /* Logoların orantılı olarak boyutlandırılması */
+    margin: 0 10px; /* Logolar arasındaki boşluk */
+}
+
+.red-bottom-nav {
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1e293b; /* Arka plan rengi */
+    padding: 50px 0; /* İçeriğin kenarlardan uzaklaştırılması için padding */
+    width: 100%;
+    top:2390px;
+}
+
+.red-bottom-nav a {
+    color: white; /* Yazı rengi */
+    text-decoration: none; /* Alt çizgi kaldırma */
+    margin: 0 15px; /* Linkler arası boşluk */
+}
+
+.sonnavbar {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1e293b; /* Arka plan rengi */
+    padding: 50px 0; /* İçeriğin kenarlardan uzaklaştırılması için padding */
+    width: 100%;
+    z-index: -1;
+    top: 2490px; /* Sayfanın altına sabitleme */
+}
+
+.sonnavbar a {
+    color: rgba(255, 255, 255, 0.603); /* Yazı rengi */
+    text-decoration: none; /* Alt çizgi kaldırma */
+    margin: 0 15px; /* Linkler arası boşluk */
+    font-size: 10px; /* Font boyutu */
+}
+
+
+.alt-metin {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 5px; /* Alt kenardan 20px yukarıda olacak şekilde ayarlama */
+    color: rgba(255, 255, 255, 0.603); /* Yazı rengi */
+    font-size: 10px; /* Font boyutu */
+
+}
+.sabit-dikdortgen {
+    position: fixed;
+    top: 30%;
+    right: 0;
+    transform: translateY(50%);
+    background-color: #1e293b;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.yan-yazi {
+    margin: 0;
+    writing-mode: vertical-rl; /* Ters yönde döndürme */
+    text-orientation:sideways; /* Yatay yönde döndürme */
+}
+
