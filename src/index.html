@@ -1,17 +1,328 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Vanilla JavaScript App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turkish Airlines ® | Flying the Most Countries</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/png" href="logo.png">
 </head>
-
 <body>
-  <main>
-    <h1>Vanilla JavaScript App</h1>
-  </main>
-</body>
 
+    <div class="topnav second-topnav">
+        <div class="links">
+            <span class="separator">┊</span>
+            <a href="#">Corporate Club</a>
+            <span class="separator">┊</span>
+            <a href="#">Miles&Smiles</a>
+            <span class="separator">┊</span>
+            <a href="#">Search</a>
+            <span class="separator">┊</span>
+            <a href="#">EN-INT          &nbsp&nbsp &nbsp</a>
+        </div>
+    </div>
+    <div class="topnav">
+        <div class="logo">
+            <span class="separator">&nbsp;</span>
+            <img src="THY-LOGO.webp" alt="thy">
+        </div>
+        <div class="links">
+            <a href="#">PLAN&BOOK</a>
+            <span class="separator">┊</span>
+            <a href="#">FLY DIFFERENT</a>
+            <span class="separator">┊</span>
+            <a href="#">DISCOVER</a>
+            <span class="separator">┊</span>
+            <a href="#">MILES & SMILES</a>
+            <span class="separator">┊</span>
+            <a href="#">HELP</a>
+            <span class="separator">┊</span>
+            <a href="#">Sign Up</a>
+            <a href="#" class="login-btn"><span>SIGN IN</span><img src="beyaz kullanıcı.svg" alt="user-icon"></a>
+        </div>
+    </div>
+
+   <div class="body-content">
+        <h1>HELLO</h1>
+        <h2>Where do you want to explore?</h2>
+    </div>
+
+<div class="sabit-dikdortgen">
+    <p class="yan-yazi">Contact Us</p>
+</div>
+
+    <div class="tab-container-wrapper">
+        <!-- İlk Tab Container -->
+        <div class="tab-container">
+            <div class="tab" onclick="openTab(event, 'flight')">&#9992; &nbsp; Flight</div>
+            <div class="spacer"></div> <!-- Spacer ekledik -->
+            <div class="tab" onclick="showWarning()"><img src="koltuk-new-fe035456.svg" alt="user-icon"> &nbsp; Check-in/Manage Booking</div>
+            <div class="spacer"></div> <!-- Spacer ekledik -->
+            <div class="tab" onclick="showWarning()">&#9992; &nbsp; Flight Status</div>
+        </div>
+    
+        <!-- İlk Tab İçerik Container -->
+        <div class="tab-content-container">
+            <div id="flight" class="tab-content active">
+            <input type="radio" id="option1" name="options" value="option1" >
+            <label for="option1">Round trip &nbsp;</label>
+            <input type="radio" id="option2" name="options" value="option2">
+            <label for="option2">One Way &nbsp;</label>
+            <input type="radio" id="option3" name="options" value="option3">
+            <label for="option3">Stopover in Istanbul &nbsp;</label>
+            <input type="radio" id="option4" name="options" value="option4">
+            <label for="option4">Multi-city &nbsp;</label>
+            <label for="text"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="exit-svgrepo-com.svg" alt="exit">&nbsp;Award ticket - Buy a ticket with Miles</label>
+
+
+            <div class="form-container">
+                <div class="form-item">
+                    <input type="text" id="from" name="from" placeholder="From">
+                </div>
+
+                <div class="image-input">
+                    <img src="exchange-change-svgrepo-com.svg" alt="exchange-icon"> 
+                </div>
+
+                <div class="form-item">
+                    <input type="text" id="where" name="where" placeholder="To">
+                </div>
+                <div class="spacer2"></div> <!-- Spacer ekledik -->
+                <div class="spacer2"></div> <!-- Spacer ekledik --> 
+                <div class="form-item">
+                    <input type="date" id="date" name="date" placeholder="Date">
+                </div>
+                <div class="form-item">
+                    <input type="number" id="number" name="number" placeholder="Passengers">
+                </div>
+                <button type="submit" class="submit-btn">Search Flights  </button>
+
+            </div>
+            
+            </div>
+            <div id="checkin" class="tab-content">
+                <h1>Check-in/Manage Booking</h1>
+                <h2>Check in process details go here</h2>
+            </div>
+            <div id="blabla" class="tab-content">
+                <h1>Blabla</h1>
+                <h2>Details about Blabla go here</h2>
+            </div>
+        </div>
+    </div>
+
+
+<img class="page-bg" src="C:\Users\nagme\Desktop\test\EN-INT-EN-US-1.webp" alt="Background Image">
+&nbsp; 
+&nbsp; 
+&nbsp; 
+&nbsp; 
+<div class="background-rectangle"></div>
+<div class="rectangle-container">
+    <div class="rectangle">
+        <div class="logo-item">
+            <a href="#">
+                <div class="logo-circle">
+                    <img src="koltuk-new-fe035456.svg" alt="Koltuk">
+                </div>
+                
+            </a>
+            <span class="logo-description">Seat Selection</span>
+        </div>
+        <span class="separator">┊</span>
+
+        <div class="logo-item">
+            <a href="#">
+                <div class="logo-circle">
+                    <img src="bagaj.svg" alt="Bagaj">
+                </div>
+            </a>
+            <span class="logo-description">Extra Baggage</span>
+        </div>
+        <span class="separator">┊</span>
+
+        <div class="logo-item">
+            <a href="#">
+                <div class="logo-circle">
+                    <img src="otel.svg" alt="Otel">
+                </div>
+            </a>
+            <span class="logo-description">Book a hotel</span>
+        </div>
+        <span class="separator">┊</span>
+
+        <div class="logo-item">
+            <a href="#">
+                <div class="logo-circle">
+    
+                <img src="araba.svg" alt="Araba">
+            </div>
+            </a>
+            <span class="logo-description">Rent a Car</span>
+        </div>
+        <span class="separator">┊</span>
+
+        <div class="logo-item">
+            <a href="#">
+                <div class="logo-circle">
+                <img src="travel.svg" alt="Seyahat">
+            </div>
+            </a>
+            <span class="logo-description">Travel Insurance</span>
+        </div>
+        <span class="separator">┊</span>
+
+        <div class="logo-item">
+            <a href="#">
+                <div class="logo-circle">
+                <img src="hediye.svg" alt="Hediye">
+            </div>
+            </a>
+            <span class="logo-description">Gift Card</span>
+        </div>
+    </div>
+</div>
+<div class="slider-info-box">
+    <div class="info-header">
+        <p>Dear Passengers, </p>
+        <img src="arrow-left-right-svgrepo-com.svg" alt="arrow" class="arrowlogosu">
+    </div>
+    <p>Due to the terrorist attacks in Moscow, additional rights have been granted to our passengers who are registered on Moscow flights. You can find detailed information on this page.</p>
+</div>
+
+<div class="square-container-wrapper">
+    <!-- İlk Container -->
+    <div class="square-container">
+        <h3>For advantageous refunds and fast payment: TK Wallet!</h3>
+        <img src="ilk resim.jpg" alt="Image 1">
+        <p>With TK Wallet, our special product for Miles&Smiles members, you can perform payments and complete refund processes quickly and easily via a digital wallet created in one of four available currencies. In addition, you can earn incremental TK Money via refunds to your digital wallet.</p>
+        <br>
+        <button>Discover</button>
+    </div>
+    
+    <!-- İkinci Container -->
+    <div class="square-container">
+        <h3>Touristanbul: An amazing experience!</h3>
+        <img src="ikinci resim.webp" alt="Image 2">
+        <p>You can benefit from our complimentary Touristanbul service to make memories which is offered to our passengers who have a connecting international flight in Istanbul with a layover between 6-24 hours.</p>
+        <br>
+        <button>Discover</button>
+    </div>
+</div>
+
+<br>
+<div class="offer-text">
+    See our best offers from <span class="highlighted">Izmir <img src="down-arrow-svgrepo-com.svg" alt="down arrow" class="down-arrow"></span>
+</div>
+<br>
+<br>
+
+<div class="additional-text">
+    To the new cities with special deals! <span class="highlighted"><br>Show all campaigns&nbsp;&nbsp;<img src="right arrow.svg" alt="right arrow" class="right-arrow"></span>
+</div>
+<br>
+<br>
+<br>
+<br>
+<!-- Alt kısmında üç resim ve açıklamalar -->
+<!-- Logo ve 3 fotoğraf konteynerı -->
+<div class="logo-image-container">
+    <div class="logoleft">
+        <img src="leftlogo.svg" alt="Logo">
+    </div>
+    <div class="image-description">
+        <img src="birinci.webp" alt="Resim 1">
+        <h4>Online ticket sales for our new<br> brand, AJet, have begun!</h4>
+        <p>AnadoluJet, that fulfills Anatolia's air transport<br> needs, is now operating domestic and<br> international flights under the AJet brand<br> on ajet.com.</p>
+        <span class="highlightediki">Discover Ajet&nbsp;&nbsp;&nbsp;<img src="right arrow.svg" alt="right arrow" class="right-arrow"></span>
+    </div>
+    <div class="image-description">
+        <img src="ikinci.png" alt="Resim 2">
+        <h4>Explore best flight deals on our<br> most popular routes!</h4>
+        <p>Book your flight now with advantageous fares.</p>
+        <br>
+        <br>
+        <br>
+        <span class="highlightediki">Learn More&nbsp;&nbsp;&nbsp;<img src="right arrow.svg" alt="right arrow" class="right-arrow"></span>
+
+    </div>
+    <div class="image-description">
+        <img src="üçüncü.avif" alt="Resim 3">
+        <h4>Fly to Australia with the Turkish<br> Airlines privileges</h4>
+        <p>Our journey to Australia has begun. Book your<br> flight now on our website or app to explore this<br> unique continent.        </p>
+        <br>
+        <span class="highlightediki">Discover&nbsp;&nbsp;&nbsp;<img src="right arrow.svg" alt="right arrow" class="right-arrow"></span>
+
+    </div>
+    <div class="logoright">
+        <img src="rightlogo.svg" alt="Logo">
+    </div>
+</div>
+
+<div class="new-container">
+    <div class="rectangled-background">
+        <div class="abc">
+            <img src="ilklogo.webp" class="ilklogo" alt="Logo 1">
+            <span>&nbsp;
+                WORLD CLASS AIRLINE&nbsp;&nbsp;</span>
+        </div>
+        <div class="abc">
+            <img src="ikincilogo.webp" class="ikincilogo" alt="Logo 1">
+            <span>&nbsp;
+                FIVE STAR GLOBAL AIRLINE&nbsp;&nbsp;</span>
+        </div>
+        <div class="abc">
+            <img src="SKYT_winner.jpg" class="üçüncülogo" alt="Logo 1">
+            <span>
+                &nbsp;BEST AIRLINE IN EUROPE&nbsp;&nbsp;</span>
+        </div>
+        <div class="abc">
+            <img src="SKYT_winner.jpg" class="dördüncülogo" alt="Logo 1">
+            <span>&nbsp;BEST BUSINESS CLASS CATERING
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="bottom-logos">
+    <img src="Turkish-Airlines-Star-Alliance-1.webp" alt="Logo 1">
+    <img src="Champions-League-Logo.png" alt="Logo 2">
+    <img src="Euroleague-logo.png" alt="Logo 3">
+</div>
+<div class="bottom navs">
+    <div class="bottom-nav">
+        <img src="facebook-svgrepo-com.svg" alt="Logo 1">
+        <img src="twitter-svgrepo-com.svg" alt="Logo 2">
+        <img src="instagram-svgrepo-com.svg" alt="Logo 3">
+        <img src="youtube-svgrepo-com.svg" alt="Logo 4">
+        <img src="linkedin-svgrepo-com.svg" alt="Logo 5">
+        <img src="tiktok-svgrepo-com (1).svg" alt="Logo 6">
+        <img src="blog-svgrepo-com.svg" alt="Logo 7">
+    </div>
+    <div class="bottom-nav red-bottom-nav">
+        <a href="#">PLAN & BOOK</a>
+        <a href="#">FLY DIFFERENT</a>
+        <a href="#">DISCOVER</a>
+        <a href="#">HELP</a>
+        <a href="#">MILES&SMILES</a>
+        <a href="#">CORPORATE CLUB</a>
+        <a href="#">TURKISH AIRLINES</a>
+    </div>
+    <!-- İkinci navbar -->
+
+</div>
+
+<div class="sonnavbar">
+    <div class="Linkler">
+        <a href="#">Accesibility</a>
+        <a href="#">Privacy&Cookie Policy</a>
+        <a href="#">Legal Notice</a>
+        <a href="#">Passenger Rights</a>
+        <a href="#">Change Cookie Settings</a>
+        <a href="#">EU Data Subjects Rights</a>
+    </div>
+    <p class="alt-metin">Turkish Airlines Copyright © 1996 - 2024</p>
+</div>
+
+</body>
 </html>
